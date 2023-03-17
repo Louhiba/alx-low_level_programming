@@ -8,14 +8,13 @@
 int main(void)
 {int n;
 srand(time(0));
-n=rand();
-printf("%d\n", n);
+n = rand();
 if (n > 0)
-	printf(" is positive \n");
-else if (n < 0)
-	printf(" is negative \n");
+	printf(" is positive\n", n);
+else if (n == 0)
+	printf(" is zero\n", n);
 else
-printf(" is zero \n");
+printf(" is negative\n", n);
 return (0);
 }
 
