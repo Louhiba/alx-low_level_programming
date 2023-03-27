@@ -1,20 +1,30 @@
 #include "main.h"
 /**
- * puts2 - puts string
- * @str: string to be checker
-*/
+ * puts2 - function should print only one character out of two
+ * starting with the first one
+ * @str: input
+ * Return: print
+ */
 void puts2(char *str)
 {
-	int c = 0;
-	int i;
+	int longi = 0;
+	int t = 0;
+	char *y = str;
+	int o;
 
-	while (str[c] != '\0')
+	while (*y != '\0')
 	{
-		c++;
+		y++;
+		longi++;
 	}
-	for (i = 0; i <= c; i += 2)
+	t = longi - 1;
+	for (o = 0 ; o <= t ; o++)
 	{
-		_putchar(str[i]);
+		if (o % 2 == 0)
+	{
+		_putchar(str[o]);
+	}
 	}
 	_putchar('\n');
 }
+
