@@ -1,14 +1,14 @@
 #include "main.h"
+#include <string.h>
 /**
- * _puts - put strings
- * @str: string to be puts
- * Return: strings
+ * _strlen - Output the lenght of string;
+ * @s: string to be checker
+ * Return: the lenght of string
 */
-void _puts(char *str)
+int _strlen(char *s)
 {
-	for (; *str != '\0'; str++)
-	{
-		_putchar(*str);
-	}
-	_putchar('\n');
+	int a;
+
+	a = strlen(s);
+	return (a);
 }
