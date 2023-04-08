@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
  * _strncpy - copy strings
  * @dest: first sting to be copy
@@ -9,7 +8,21 @@
 */
 char *_strncpy(char *dest, char *src, int n)
 {
-	char *ptr = strncpy(dest, src, n);
+	int j;
 
-	return (ptr);
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+		dest[j] = src[j];
+		j++;
+	}
+	while (j < n)
+	{
+		dest[j] = '\0';
+		j++;
+	}
+
+
+	return (dest);
+
 }
