@@ -37,8 +37,6 @@ int main(int argc, char **argv)
 	int s = 0;
 	int n;
 
-	if (argc == 1)
-		printf("0\n");
 	for (i = 1; i < argc; i++)
 	{
 		if (check_num(argv[i]))
