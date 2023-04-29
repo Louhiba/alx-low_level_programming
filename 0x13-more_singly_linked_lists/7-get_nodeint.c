@@ -3,8 +3,7 @@
 /**
  * get_nodeint_at_index - returns the node at a certain index in a linked list
  * @head: first node
- * @index: index 
- *
+ * @index: index
  * Return: pointer or NULL
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
@@ -12,11 +11,11 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	unsigned int r;
 	listint_t *t = head;
 
-	if(!t)
+	if (!t)
 	{
 		return (NULL);
 	}
-	for(r = 0; r < index; r++)
+	for (r = 0; r < index; r++)
 	{
 		t = t->next;
 	}
