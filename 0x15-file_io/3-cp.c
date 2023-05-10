@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 void close_f(int file);
-char *creat(char *f);
+char *creat_c(char *f);
 /**
  * close_f - Closes file descriptors.
  * @file: The file descriptor to be closed.
@@ -19,11 +19,11 @@ void close_f(int file)
 	}
 }
 /**
- * create- Allocates 1024 bytes for a buffer.
+ * create_c - Allocates 1024 bytes for a buffer.
  * @file: The name of the file buffer is storing chars for.
  * Return: A pointer to the newly-allocated buffer.
  */
-char *create(char *f)
+char *create_c(char *f)
 {
 	char *c;
 
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	c = creat(argv[2]);
+	c = create_c(argv[2]);
 	f1 = open(argv[1], O_RDONLY);
 	i = read(f1, c, 1024);
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
