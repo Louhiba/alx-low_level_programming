@@ -20,7 +20,7 @@ void close_f(int file)
 }
 /**
  * create_c - Allocates 1024 bytes for a buffer.
- * @file: The name of the file buffer is storing chars for.
+ * @f: The name of the file buffer is storing chars for.
  * Return: A pointer to the newly-allocated buffer.
  */
 char *create_c(char *f)
@@ -57,6 +57,8 @@ int main(int argc, char *argv[])
 	f1 = open(argv[1], O_RDONLY);
 	i = read(f1, c, 1024);
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	do
+	{
 	if (f1 == -1 || i  == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -72,6 +74,7 @@ int main(int argc, char *argv[])
 	}
 	i = read(f1, c, 1024);
 	f2 = open(argv[2], O_WRONLY | O_APPEND);
+	}while (i > 0);
 	free(c);
 	close_f(f1);
 	close_f(f2);
